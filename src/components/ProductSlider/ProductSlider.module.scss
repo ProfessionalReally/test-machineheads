@@ -1,0 +1,113 @@
+@use "../../styles/abstracts/variables" as *;
+@use "../../styles/abstracts/mixins" as *;
+@use "../../styles/abstracts/functions" as *;
+
+.product-slider {
+  display: flex;
+  flex-direction: column;
+  gap: px-to-rem(30);
+  padding: px-to-rem(20);
+  max-width: 100%;
+
+  @include media-min($breakpoint-xs) {
+    gap: px-to-rem(18);
+    padding-block: px-to-rem(43);
+  }
+
+  @include media-min($breakpoint-sm) {
+    gap: px-to-rem(20);
+    padding-block: px-to-rem(40) px-to-rem(24);
+  }
+
+  &__title {
+    color: $color-dark;
+    font-weight: 500;
+    font-size: px-to-rem(24);
+    line-height: 125%;
+    text-transform: uppercase;
+
+    @include media-min($breakpoint-sm) {
+      font-size: px-to-rem(34);
+      line-height: 130%;
+    }
+
+    @include media-min($breakpoint-md) {
+      font-size: px-to-rem(44);
+      line-height: px-to-rem(52);
+    }
+  }
+
+  &__swiper {
+    width: 100%;
+  }
+
+  &__button {
+    @include button-base(
+                    $color-primary,
+                    $color-light,
+                    $color-primary-hover,
+                    $color-primary-active
+    );
+
+    @include media-min($breakpoint-sm) {
+      padding: px-to-rem(12) px-to-rem(73);
+    }
+  }
+
+  &__controls-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__arrows {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: px-to-rem(10);
+
+    @include media-min($breakpoint-sm) {
+      gap: px-to-rem(20);
+    }
+  }
+
+  &__button-arrow {
+    @include icon-wrapper(35px, $color-bg);
+    border: transparent;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+    transform 0.1s ease,
+    opacity 0.2s ease;
+
+    @include media-min($breakpoint-sm) {
+      width: 45px;
+      height: 45px;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: #dcdcdc;
+        opacity: 0.9;
+      }
+    }
+
+    &:active {
+      background-color: #d0d0d0;
+      transform: scale(0.95);
+    }
+
+    &:focus-visible {
+      outline: 2px solid rgba(0, 0, 0, 0.1);
+      outline-offset: 2px;
+    }
+  }
+
+  &__icon {
+    transition: transform 0.2s ease;
+
+    .product-slider__button-arrow--next & {
+      transform: scaleX(-1);
+    }
+  }
+}
+

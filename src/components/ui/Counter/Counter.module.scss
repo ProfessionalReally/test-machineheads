@@ -1,0 +1,57 @@
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/functions' as *;
+@use '../../../styles/abstracts/mixins' as *;
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: px-to-rem(9) px-to-rem(11) px-to-rem(7);
+  width: fit-content;
+  min-width: 99px;
+
+  @include media-max(1023px) {
+    display: none;
+  }
+
+  &__btn {
+    border: none;
+    background: none;
+    font-size: px-to-rem(23);
+    color: $color-dark;
+    cursor: pointer;
+    transition: opacity 0.2s ease,
+                transform 0.1s ease,
+                background-color 0.2s ease;
+    text-align: center;
+    padding: px-to-rem(4);
+    border-radius: 4px;
+    user-select: none;
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.7;
+        background-color: rgba(0, 0, 0, 0.03);
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+      background-color: rgba(0, 0, 0, 0.06);
+    }
+
+    &:focus-visible {
+      outline: 2px solid rgba(0, 0, 0, 0.2);
+      outline-offset: 2px;
+    }
+  }
+
+  &__value {
+    font-size: px-to-rem(15);
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+  }
+}

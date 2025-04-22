@@ -1,0 +1,213 @@
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/functions' as *;
+
+.product-card {
+  width: 100%;
+
+  @include media-min($breakpoint-xs) {
+    margin-top: px-to-rem(5);
+  }
+
+  @include media-min($breakpoint-sm) {
+    margin-top: px-to-rem(20);
+  }
+
+  @include media-min($breakpoint-xl) {
+    margin-top: 0;
+  }
+
+  &__images {
+    position: relative;
+  }
+
+  &__icons {
+    position: absolute;
+    top: 0;
+    left: px-to-rem(10);
+    display: flex;
+    flex-direction: column;
+    gap: px-to-rem(3);
+    list-style: none;
+
+    .product-card__icon {
+      @include icon-wrapper(35px, $color-bg);
+    }
+  }
+
+  &__image-wrapper {
+    padding-top: px-to-rem(11);
+    display: flex;
+    justify-content: center;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 124px;
+    object-fit: cover;
+    height: auto;
+
+    @include media-min($breakpoint-xs) {
+      max-width: 105px;
+    }
+
+    @include media-min($breakpoint-sm) {
+      max-width: 103px;
+    }
+
+    @include media-min($breakpoint-md) {
+      max-width: 128px;
+    }
+
+    @include media-min($breakpoint-lg) {
+      max-width: 139px;
+    }
+
+    @include media-min($breakpoint-xl) {
+      max-width: 150px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: px-to-rem(8);
+    background-color: $color-bg;
+    border-radius: 6px;
+    padding: px-to-rem(12) px-to-rem(10);
+
+    @include media-min($breakpoint-sm) {
+      margin-top: px-to-rem(6);
+    }
+
+    @include media-min($breakpoint-md) {
+      padding: px-to-rem(20);
+      gap: px-to-rem(12);
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: px-to-rem(14);
+    line-height: 120%;
+    color: $color-dark;
+
+    @include media-min($breakpoint-md) {
+      font-size: px-to-rem(18);
+    }
+
+    @include media-min($breakpoint-xl) {
+      line-height: 130%;
+    }
+  }
+
+  &__review {
+    display: flex;
+    align-items: center;
+    gap: px-to-rem(12);
+
+    @include media-min($breakpoint-xs) {
+      gap: px-to-rem(7);
+    }
+
+    @include media-min($breakpoint-sm) {
+      gap: px-to-rem(24);
+    }
+
+    @include media-min($breakpoint-md) {
+      gap: px-to-rem(12);
+    }
+  }
+
+  &__comments {
+    font-weight: 400;
+    font-size: px-to-rem(12);
+    line-height: 130%;
+  }
+
+  &__features {
+    display: flex;
+    flex-direction: column;
+    gap: px-to-rem(2);
+
+    @include media-min($breakpoint-md) {
+      gap: px-to-rem(5);
+    }
+  }
+
+  &__feature {
+    display: flex;
+    align-items: center;
+    gap: px-to-rem(10);
+    font-weight: 400;
+    font-size: px-to-rem(15);
+    line-height: 130%;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+    margin-top: px-to-rem(20);
+    font-weight: 500;
+    line-height: 130%;
+    gap: px-to-rem(8);
+
+    @include media-min($breakpoint-sm) {
+      gap: px-to-rem(9);
+    }
+
+    @include media-min($breakpoint-sm) {
+      gap: px-to-rem(8);
+      margin-top: px-to-rem(12);
+    }
+
+    @include media-min($breakpoint-xl) {
+      margin-top: px-to-rem(17);
+    }
+
+    &-old {
+      font-size: px-to-rem(20);
+      text-decoration: line-through;
+      color: $color-grey;
+    }
+
+    &-new {
+      font-size: px-to-rem(26);
+      color: $color-dark;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    margin-top: px-to-rem(7);
+    gap: px-to-rem(9);
+
+    @include media-min($breakpoint-xl) {
+      margin-top: px-to-rem(6);
+    }
+  }
+
+  &__primary-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: px-to-rem(10);
+  }
+
+  &__button {
+    @include button-base($color-primary, $color-light, $color-primary-hover);
+    width: 100%;
+
+    @include media-min($breakpoint-lg) {
+      padding: px-to-rem(12) px-to-rem(10);
+    }
+  }
+
+  &__button--neutral {
+    @include button-base(transparent, $color-dark, $color-bg-hover);
+    border: 1px solid $color-grey;
+  }
+}
+
+

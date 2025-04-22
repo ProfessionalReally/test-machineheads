@@ -1,0 +1,27 @@
+@use './styles/base/_fonts.scss';
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: fonts.$font-family-base;
+}
+
+#root {
+  margin: 0 auto;
+  min-width: 320px;
+  min-height: 100vh;
+  max-width: 1440px;
+}
+

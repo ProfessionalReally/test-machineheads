@@ -1,0 +1,63 @@
+@use './functions' as *;
+@use './variables' as *;
+
+@mixin button-base($bg, $color, $hover-bg: null, $active-bg: null) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: px-to-rem(12) px-to-rem(25);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: px-to-rem(15);
+  line-height: 130%;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  background-color: $bg;
+  color: $color;
+  transition: background-color 0.3s;
+
+
+  @media (hover: hover) {
+    &:hover {
+      @if $hover-bg != null {
+        background-color: $hover-bg;
+      }
+    }
+  }
+
+  &:active {
+    transform: scale(0.97);
+    @if $active-bg != null {
+      background-color: $active-bg;
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(0, 0, 0, 0.15);
+    outline-offset: 2px;
+  }
+}
+
+@mixin icon-wrapper($size, $bg) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $size;
+  height: $size;
+  background-color: $bg;
+  border-radius: 50%;
+}
+
+@mixin media-min($bp) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+
+@mixin media-max($bp) {
+  @media (max-width: $bp) {
+    @content;
+  }
+}

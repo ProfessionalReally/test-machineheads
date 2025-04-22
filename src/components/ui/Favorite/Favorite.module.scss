@@ -1,0 +1,46 @@
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/functions' as *;
+@use '../../../styles/abstracts/mixins' as *;
+
+.favorite-heart {
+  all: unset;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+
+  @include media-min($breakpoint-lg) {
+    margin-left: px-to-rem(10);
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    fill: transparent;
+    transition: fill .3s ease, transform .3s ease;
+  }
+
+  &--active &__icon {
+    fill: $color-primary;
+
+    path {
+      stroke: none;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $color-primary;
+  }
+
+
+  &:active {
+    background-color: transparent;
+    transform: scale(0.94);
+  }
+
+}

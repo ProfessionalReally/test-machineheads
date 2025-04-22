@@ -1,12 +1,11 @@
-import './App.css'
+import {ProductSlider} from "./components/ProductSlider/ProductSlider.jsx";
 
 function App() {
-
-  return (
-    <>
-
-    </>
-  )
+    return (
+        <>
+            <ProductSlider/>
+        </>
+    )
 }
 
 export default App
