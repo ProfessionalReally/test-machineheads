@@ -1,12 +1,58 @@
-# React + Vite
+# Слайдер товаров для MACHINEHEADS ![logo](https://raw.githubusercontent.com/ProfessionalReally/test-machineheads/refs/heads/main/public/favicon.ico)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Этот проект был выполнен как тестовое задание для компании **MACHINEHEADS**. Задача заключалась в создании адаптивного слайдера товаров на основе макета из Figma с использованием **React JS** и **SCSS**.
 
-Currently, two official plugins are available:
+## Описание
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Проект представляет собой слайдер товаров, адаптированный под различные разрешения экранов. В слайдере реализована плавная прокрутка товаров, основанная на библиотеке **Swiper**, и учитываются все требования, указанные в макете.
 
-## Expanding the ESLint configuration
+## Ссылка на макет
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Макет для проекта был предоставлен в Figma. Ознакомиться с ним можно по следующей ссылке:
+
+[Открыть макет в Figma](https://www.figma.com/design/S0UFEEoHoEbz6PEt77s2fz/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-MH-%D0%97%D0%B0%D0%BF%D0%B0%D1%81%D0%BA%D0%B0?t=iuhRdmJfdgbzy0Hs-0)
+
+## Деплой
+
+Проект развернут и доступен по следующему адресу:
+
+[Деплой проекта](https://professionalreally.github.io/test-machineheads/)  
+
+## Используемые технологии
+
+- **React JS**: Для создания интерфейса.
+- **SCSS**: Для стилизации и адаптивной верстки.
+- **BEM** (Block-Element-Modifier): Для чистоты, читаемости и поддерживаемости кода
+- **Swiper**: Для реализации функционала слайдера.
+- **GitHub Pages**: Для хостинга и деплоя проекта.
+
+## Установка и запуск
+
+1. Клонируйте репозиторий:
+
+   ```bash
+   git clone https://github.com/ProfessionalReally/test-machineheads.git
+
+2. Перейдите в директорию проекта:
+
+   ```bash
+   cd test-machineheads
+
+3. Установите зависимости:
+
+    ```bash
+    npm install
+
+4. Запустите проект локально:
+
+    ```bash
+    npm run dev
+5. Откройте браузер и перейдите по адресу из консоли (например, http://localhost:3000), чтобы увидеть приложение.
+
+## Установка и запуск
+1. Для сборки проекта используйте команду:
+
+   ```bash
+   npm run build
+
+Собранный проект будет находиться в папке dist и готов для деплоя.
